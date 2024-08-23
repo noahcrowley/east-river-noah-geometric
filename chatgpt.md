@@ -1,8 +1,10 @@
-# Prompt
+# 1
+
+## Prompt
 
 > Help me build a website. The site should have two elements, a video called "video.mp4" and an overlay graphic called "graphic.svg". The video should be centered on the page. The video should automatically play when the mouse cursor rolls over it, and should stop playing when the mouse cursor is not over it. The overlay graphic should be in SVG format, and centered on top of the video.
 
-# Response
+## Response
 
 Certainly! To create a website with the specified functionality, you'll need to use HTML, CSS, and JavaScript. Here’s a step-by-step guide to help you build the site:
 
@@ -116,3 +118,149 @@ document.addEventListener('DOMContentLoaded', function() {
 To get this working, make sure you place `video.mp4`, `graphic.svg`, `index.html`, `styles.css`, and `script.js` in the same directory. Then, open `index.html` in a web browser to see the result.
 
 Feel free to adjust the styles and functionality as needed for your specific use case!
+
+# 2
+
+## Prompt
+
+How can I set the transparency of the overlay image to 20%?
+
+## Response
+
+To set the transparency of the overlay image to 20%, you can use CSS to adjust the opacity of the image. Here's how you can modify the CSS to include this change:
+
+### Updated CSS
+
+In your `styles.css`, you should modify the `.overlay img` selector to include the `opacity` property. Here's the updated CSS:
+
+```css
+/* Reset default margin and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+.overlay img {
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0.2; /* Set transparency to 20% */
+}
+```
+
+### Explanation
+
+- **Opacity Property**: The `opacity` property in CSS sets the transparency level of the image. A value of `0` is fully transparent, and `1` is fully opaque. Setting it to `0.2` makes the image 20% opaque and 80% transparent.
+
+This change will ensure that the SVG overlay graphic is displayed with the desired transparency. Just update the CSS file and reload your webpage to see the effect.
+
+# 3
+
+## Prompt
+
+I would also like to set the width of the video to 50% of the width of the page, and the width of the overlay image to 20% of the width of the page
+
+## Response
+
+To set the width of the video and the overlay image as a percentage of the page width, you can update your CSS accordingly. Here’s how you can achieve that:
+
+### Updated CSS
+
+Modify your `styles.css` to set the widths as specified:
+
+```css
+/* Reset default margin and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+video {
+    width: 50%; /* Set video width to 50% of the page width */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; /* Match overlay width to video width */
+    height: 50%; /* Match overlay height to video height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+.overlay img {
+    width: 20%; /* Set overlay image width to 20% of the page width */
+    height: auto; /* Maintain aspect ratio */
+    opacity: 0.2; /* Set transparency to 20% */
+}
+```
+
+### Explanation
+
+1. **Video Width**:
+   - Set the `width` of the `video` element to `50%` to make it occupy 50% of the page width. The `height: auto` ensures the aspect ratio of the video is maintained.
+
+2. **Overlay Position and Size**:
+   - The `.overlay` container should be sized to match the `video` size to ensure proper alignment. Set its `width` and `height` to `50%` to match the video dimensions.
+
+3. **Overlay Image Width**:
+   - Set the `width` of the `img` within the `.overlay` to `20%` to make it occupy 20% of the page width. The `height: auto` ensures the image maintains its aspect ratio.
+
+### Considerations
+
+- The `height` of the `.overlay` is set to `50%` to match the video height. If the overlay graphic should not scale with the video, you might need to adjust the overlay’s height or use a different method to position it.
+
+- Depending on the aspect ratio of your video and the design requirements, you might need additional adjustments. 
+
+After making these changes, refresh your webpage to see the video and overlay image positioned and sized as desired.
+
+## Issues
+
+This code results in the overlay being centered around the top-left corner of the video.
