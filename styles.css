@@ -26,8 +26,8 @@ video {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%; /* Match overlay width to video width */
-    height: 50%; /* Match overlay height to video height */
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,7 +35,7 @@ video {
 }
 
 .overlay img {
-    width: 20%; /* Set overlay image width to 20% of the page width */
+    width: 15%; /* Set overlay image width to 20% of the page width */
     height: auto; /* Maintain aspect ratio */
     opacity: 0.2; /* Set transparency to 20% */
 }
