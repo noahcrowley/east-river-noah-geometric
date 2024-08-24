@@ -264,3 +264,48 @@ After making these changes, refresh your webpage to see the video and overlay im
 ## Issues
 
 This code results in the overlay being centered around the top-left corner of the video.
+
+# 4
+
+## Prompt
+
+How can I ensure that the video loops?
+
+## Response
+
+To ensure that the video loops continuously, you can use the `loop` attribute in the HTML `<video>` element. This attribute tells the browser to restart the video automatically when it reaches the end.
+
+Here’s how you can update your HTML to include the `loop` attribute for the video:
+
+### Updated HTML
+
+In your `index.html`, modify the `<video>` element as follows:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video with SVG Overlay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <video id="video" src="video.mp4" muted loop></video>
+        <div class="overlay">
+            <img src="graphic.svg" alt="Overlay Graphic">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+### Explanation
+
+- **`loop` Attribute**: Adding the `loop` attribute to the `<video>` tag will ensure that the video restarts automatically once it finishes playing. You do not need to set its value; simply including the attribute is enough to enable looping.
+
+### Summary
+
+By including the `loop` attribute in your `<video>` tag, you ensure that the video will continuously play in a loop without needing any additional JavaScript or CSS. This is a straightforward way to achieve looping functionality for your video.
